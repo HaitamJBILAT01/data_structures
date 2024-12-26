@@ -14,7 +14,7 @@ typedef struct node{
 
 node* head = NULL ; /* Global variable can be used in any function 
                        We won't need to pass the list in the parametres
-                       We can delcare it in the main but use    void Insert(node* head, int x, int p)
+                       We can declare it in the main but use    void Insert(node* head, int x, int p)
                      */
 
 

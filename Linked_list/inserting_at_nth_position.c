@@ -1,7 +1,7 @@
 /*
-  This program allows the user to create a singly linked list by inserting nodes
-   at the n'th position, prints the list, and cleans up memory
-   at the end.
+  This function allows the user to create a singly linked list by inserting nodes
+   at the n'th position
+
  */
 
 
@@ -14,26 +14,14 @@ typedef struct node{
   struct node* next;
 }node;
 
-node* head = NULL ; // global variable can be used in any function
- 
-int GetUserInput() {    //  function to get the user input, it returns an integer
-    int x;
-    printf("Enter the number:\n");
-    scanf("%d", &x);
-    return x;
-}
-
-int GetUserInputPosition() {    //  function to get the position of the new node
-    int x;
-    printf("Enter the position\n");
-    scanf("%d", &x);
-    return x;
-}
-
+node* head = NULL ; /* Global variable can be used in any function 
+                       We won't need to pass the list in the parametres
+                       We can declare it in the main but use    void Insert(node* head, int x, int p)
+                     */
 
 void Insert(int x, int p) {
 
-  node* temp = (node*) malloc(sizeof(node));
+  node* temp = (node*) malloc(sizeof(node)); 
      if (temp == NULL){ 
        printf("Allocation failed");
        exit(1);
@@ -61,45 +49,3 @@ void Insert(int x, int p) {
                     }
                     
                 }
-
-
-
-
-
-
-
-void Print(){
-
-  node* temp = head;              // a fonction that prints the elements of a list 
-
-           printf("List is:  ");
-      while(temp != NULL){
-
-           printf("%d ",temp->data);
-           temp = temp->next;
-        }
-      printf("\n");
-}
-
-void FreeList() {
-    node* temp;
-    while (head != NULL) {
-        temp = head;
-        head = head->next;
-        free(temp);
-    }
-}
-
-
-int main() {
-   
-   Insert(GetUserInput(),GetUserInputPosition());
-   Insert(GetUserInput(),GetUserInputPosition());
-   Insert(GetUserInput(),GetUserInputPosition());
-   Insert(GetUserInput(),GetUserInputPosition());
-   
-   Print(); 
-   FreeList();
-
-    return 0;
-}

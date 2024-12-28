@@ -1,5 +1,5 @@
 /*
-  This function allows the user to delete a node in a singly linked list by typing the node's position
+  This function allows the user to reverse a singly linked list using recursion
  */
 
 

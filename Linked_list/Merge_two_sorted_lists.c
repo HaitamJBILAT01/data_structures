@@ -34,15 +34,16 @@ struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2) {
 
                                     current3->next = current1;
                                     current1 = current1->next;
-                                    current3 = current3->next;
+                                   
                                  }
 
                                  else{
 
                                    current3->next = current2;
                                    current2 = current2->next;
-                                   current3 = current3->next;
+                                   
                                  }
+                                 current3 = current3->next;
                         
                      }
 
@@ -51,6 +52,7 @@ struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2) {
                         else if(current2 == NULL)
                          current3->next = current1;
 
-
-          return dummyNode->next;
+          struct ListNode *NewOne = dummyNode->next;
+          free(dummyNode);
+          return NewOne;
 }
